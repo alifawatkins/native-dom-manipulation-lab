@@ -17,22 +17,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Do all of your work inside the document.addEventListener  
 
   // Part 1
-
+  let newTitle = document.getElementById('main-title')
+  newTitle = 'DOM Toretto Website'
+  console.log(newTitle);
 
   // Part 2
-
+  const root = document.querySelector('html');
+  console.log(root.children);
+  let body = root.children[1]
+  body.style.background = 'purple'; 
 
   // Part 3
+  const favThings = document.getElementById('favorite-things');
+  console.log(favThings);
 
+  favThings.lastElementChild.remove();
+  console.log(favThings);
 
   // Part 4
+  let specialTitle = document.querySelectorAll('div.special-title');
 
+  console.log(specialTitle);
+
+  specialTitle.forEach(element => {
+    element.style.fontSize = '2rem';
+  })
 
   // Part 5
-
+  const pastRaces = document.getElementById('past-races');
+  console.log(pastRaces);
+  pastRaces.children[3].remove();
 
   // Part 6
+  const newCity = document.createElement('li');
+  const liText = document.createTextNode('Boston');
+  newCity.appendChild(liText);
+  pastRaces.appendChild(newCity);
 
+  console.log(pastRaces);
 
   // Part 7
 
