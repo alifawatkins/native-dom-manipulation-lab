@@ -57,14 +57,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
   console.log(pastRaces);
 
   // Part 7
+  const main = document.querySelector('.main');
+  
+  const newBlog = document.createElement('div');
+  const newHeading = document.createElement('h1');
+  const newParagraph = document.createElement('p');
 
+  newBlog.classList.add('blog-post', 'purple')
+  const h1Text= document.createTextNode('Boston');
+  const pText= document.createTextNode('I GOT MY CAR STUCK IN MASSHOLE TRAFFIC');
 
-  // Part 8
+  main.appendChild(newBlog);
+  newHeading.appendChild(h1Text);
+  newParagraph.appendChild(pText);
+  newBlog.append(newHeading, newParagraph);
+  
+  // Part 8 
 
+  const randomQuoteEl = document.getElementById('quote-title')
+  randomQuoteEl.addEventListener('click', function(evt) {
+    randomQuote();
+  });
 
   // Part 9
-
-
-
-
+  const blogPosts = document.querySelectorAll('.blog-post'); 
+  blogPosts.forEach(element => {
+    element.addEventListener('mouseout', function(evt){
+      element.classList.toggle('purple');
+    });
+    element.addEventListener('mouseenter', function(evt){
+      element.classList.toggle('red');
+    });
+  });
 });
+
